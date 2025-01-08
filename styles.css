@@ -15,10 +15,6 @@ padding內邊距, margin外邊距, border邊框
   vw(width)全螢幕寬度, vh(height)全螢幕高度
 */
 
-body
-{
-    background-color: 14, 58, 92;
-}
 
 
 .Home-section {
