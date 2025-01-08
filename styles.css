@@ -15,6 +15,10 @@ padding內邊距, margin外邊距, border邊框
   vw(width)全螢幕寬度, vh(height)全螢幕高度
 */
 
+body
+{
+    background-color: rgb(10, 42, 67);
+}
 
 
 .Home-section {
@@ -61,7 +65,7 @@ object-fit圖片比例
     bottom: 0;
     width: 100%;
     height: 300px;
-    background: linear-gradient(to top, #ededed, transparent);
+    background: linear-gradient(to top,  rgb(10, 42, 67), transparent);
     z-index: 10;
 }
 .Home-section::after {
@@ -71,7 +75,7 @@ object-fit圖片比例
     left: 0;
     width: 100%;
     height: 100%;
-    background: #0a2a43d4;
+    background: rgb(10, 42, 67);
     mix-blend-mode: color;
     z-index: 10;
 }
@@ -126,7 +130,7 @@ nav a {
     padding: 20px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    color: rgb(53, 53, 53);
+    color: rgb(255, 255, 255);
     text-decoration: none;
     transition: all 0.5s;
   }
@@ -138,7 +142,7 @@ font-weight字體粗細
 */
 
 .active {
-    background-color: #0a2a43;
+    background-color: rgb(10, 42, 67);
     color: white;
 }
 /*
@@ -147,7 +151,7 @@ font-weight字體粗細
 */
 
 nav a:hover {
-    background-color: #0a2a43;
+    background-color:  rgb(10, 42, 67);
     color: white;
 }
 /*a:hover懸停*/
@@ -168,7 +172,7 @@ nav:hover > a:not(:hover) {
 #text {
     position: relative;
     z-index: 1;
-    color: #fff;
+    color: rgb(255, 255, 255);
 }
 #text h3 {
     font-size: 1.6vw;
@@ -195,11 +199,10 @@ text-transform字母大小寫
 }
 
 #p1 p{
-    background-color: #dcf0fc;
     font-size: 18px;
     font-weight: lighter;
     letter-spacing: 1px;
-    color: #000000be;
+    color: rgb(255, 255, 255);
     padding: 80px 0px;
     width: 100vw;
     overflow: hidden;
@@ -229,8 +232,8 @@ background-repeat背景重複*/
     position: absolute;
     top: 0;
     width: 100%;
-    height: 100vh;
-    background: linear-gradient(to bottom, #dcf0fc, transparent);
+    height: 150vh;
+    background: linear-gradient(to bottom,  rgb(10, 42, 67), transparent);
     z-index: 10;
 }
 
@@ -241,6 +244,7 @@ background-repeat背景重複*/
 
 .Abo {
     display: flex;
+    z-index: 11;
 }
 
 .About-section img {
@@ -250,7 +254,7 @@ background-repeat背景重複*/
     padding: 5px;
     height: 20vh;
     z-index: 11;
-    border: 2px #dcf0fc;
+    border: 2px rgb(255, 255, 255);
     border-radius: 1000px;
     border-style: dashed groove none dotted;
 }
@@ -259,7 +263,7 @@ background-repeat背景重複*/
     position: absolute;
     left: 10vw;
     top: 65vh;
-    color: #dcf0fc;
+    color: rgb(255, 255, 255);
     font-weight: lighter;
     font-size: 70px;
     letter-spacing: 10px;  
@@ -276,7 +280,7 @@ background-repeat背景重複*/
 .About-section p{
     position: absolute;
     top: 92vh;
-    color: #dcf0fc;
+    color:  rgb(210, 236, 255);
     font-size: 15px;
     font-weight: lighter;
     letter-spacing: 1px;
@@ -297,7 +301,7 @@ background-repeat背景重複*/
 }*/
 
 .About2 h3{
-    color: #dcf0fc;
+    color: rgb(210, 236, 255);
     font-weight: lighter;
     font-size: 22px;
     padding: 3vh;
@@ -305,9 +309,10 @@ background-repeat背景重複*/
 
 .School-Works-section{
     display: flex;
-    background-color: #dcf0fc;
+    background-color: rgb(76, 111, 136);
     justify-content: space-between;
     align-items: center;
+    height: 550px;
     width: 100vw;
     overflow: hidden;
 }
@@ -324,9 +329,10 @@ background-repeat背景重複*/
 
 .Personal-Works-section{
     display: flex;
-    background-color: #dcf0fc;
+    background-color: rgb(76, 111, 136);
     justify-content: space-between;
     align-items: center;
+    height: 550px;
     width: 100vw;
     overflow: hidden;
     margin: 5vh 0vw;
@@ -343,9 +349,9 @@ background-repeat背景重複*/
 }
 
 footer {
-    background-color: #0a2a43;
-    color: #ffffffc9;
-    height: 70px;
+    background-color: rgb(5, 35, 56);
+    color: rgb(210, 236, 255);
+    height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
