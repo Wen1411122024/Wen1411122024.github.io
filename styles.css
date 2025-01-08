@@ -1,0 +1,461 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+/*字體集*/
+
+*
+{
+    padding: 0;
+    margin: 0;
+    border: none;
+    font-family: "Inter", sans-serif;
+}
+/*
+padding內邊距, margin外邊距, border邊框
+* 10Px; 10px 5px; 10px 5px 10px; 10px 5px 10px 5px
+  四邊, 上下 左右,  上  左右 下 ,  上   右  下  左
+  vw(width)全螢幕寬度, vh(height)全螢幕高度
+*/
+
+body
+{
+    background-color: #0a2a43;
+}
+
+
+.Home-section {
+    position: relative;
+    width: 100vw;
+    height: 90vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*
+position:relative設此元素為相對定位, 相對定位的元素會成為內部絕對定位子元素（position: absolute）的參考框架
+overflow超出範圍
+參考https://developer.mozilla.org/zh-CN/docs/Web/CSS/overflow
+display: flex套用flex
+justify-content水平排列 
+參考https://w3c.hexschool.com/flexbox/4a029043
+align-items垂直排列
+參考https://w3c.hexschool.com/flexbox/87d66dc4
+*/
+
+.Home-section img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/*
+position: absolute; top: 0; left: 0;將圖片絕對定位於 section 的左上角
+object-fit圖片比例
+參考https://developer.mozilla.org/zh-CN/docs/Web/CSS/object-fit
+*/
+
+/*
+::before/after偽元素
+參考https://w3c.hexschool.com/blog/5667df85
+*/
+.Home-section::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(to top, #ededed, transparent);
+    z-index: 10;
+}
+.Home-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0a2a43d4;
+    mix-blend-mode: color;
+    z-index: 10;
+}
+/*
+content: ''設置一個空的偽元素
+linear-gradient漸層
+transparent透明
+mix-blend-mode混色模式
+*/
+
+header {
+    z-index: 20;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+  }
+/*
+z-index圖層 由大至小, 
+*/
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 12px 3.5%;
+    background-color: rgba(255, 255, 255, 0.2);
+    height: 25px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  }
+/*
+gap各標籤彼此間距
+border-top/bottom-left/right-radius圓角
+backdrop-filter背景濾鏡 blur模糊
+參考https://ithelp.ithome.com.tw/articles/10359068
+*/
+
+nav li {
+    display: inline;
+}
+/*使標籤在同一欄內*/
+
+nav a {
+    font-size: 21px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    padding: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    color: rgb(53, 53, 53);
+    text-decoration: none;
+    transition: all 0.5s;
+  }
+/*
+text-decoration文字裝飾
+transition轉場
+font-weight字體粗細
+參考https://developer.mozilla.org/zh-TW/docs/Web/CSS/transition
+*/
+
+.active {
+    background-color: #0a2a43;
+    color: white;
+}
+/*
+.active啟動效果
+參考https://developer.mozilla.org/zh-CN/docs/Web/CSS/:active
+*/
+
+nav a:hover {
+    background-color: #0a2a43;
+    color: white;
+}
+/*a:hover懸停*/
+
+/*
+nav:hover > a:not(:hover) {
+    background-color: transparent;
+    color: rgb(53, 53, 53);
+}
+*/
+/*transparent透明*/
+
+.menu {
+    display: none;
+}
+/*頁面大小正常時不顯示*/
+
+#text {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+}
+#text h3 {
+    font-size: 1.6vw;
+    font-weight: 400;
+    letter-spacing: 15px;
+    text-align: center;
+  }
+#text h1 {
+    font-size: 13vw;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 15px;
+    text-align: center;
+    margin: -20px 0;
+  }
+/*
+提取id="text"
+position: relative相對定位
+text-transform字母大小寫
+*/
+
+#road{
+    z-index: 2;
+}
+
+#p1 p{
+    background-color: #dcf0fc;
+    font-size: 18px;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    color: #000000be;
+    padding: 80px 0px;
+    width: 100vw;
+    overflow: hidden;
+    text-align: center;
+}
+/*text-align: center整句文字置中*/
+
+.About-section {
+    position: relative;
+    height: 230vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url(assets/images/lg.png);
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+/*
+flex-direction排版方式, column直排
+background-repeat背景重複*/
+
+.About-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom, #dcf0fc, transparent);
+    z-index: 10;
+}
+
+#About{
+    position: relative;
+    top: 10vh;
+}
+
+.Abo {
+    display: flex;
+}
+
+.About-section img {
+    position: absolute;
+    right: 10vw;
+    top: 65vh;
+    padding: 5px;
+    height: 20vh;
+    z-index: 11;
+    border: 2px #dcf0fc;
+    border-radius: 1000px;
+    border-style: dashed groove none dotted;
+}
+
+.me {
+    position: absolute;
+    left: 10vw;
+    top: 65vh;
+    color: #dcf0fc;
+    font-weight: lighter;
+    font-size: 70px;
+    letter-spacing: 10px;  
+}
+
+.me h1 {
+    font-weight: lighter;
+}
+.me h3 {
+    font-weight: lighter;
+    font-size: 22px;
+}
+
+.About-section p{
+    position: absolute;
+    top: 92vh;
+    color: #dcf0fc;
+    font-size: 15px;
+    font-weight: lighter;
+    letter-spacing: 1px;
+}
+
+.About2 {
+    position: absolute;
+    top:105vh;
+    /*max-width: 70vh;
+    width: 100%;
+    height: auto;*/
+}
+
+/*.video01{
+    position: absolute;
+    width: 100%;
+    max-height: 70vh;
+}*/
+
+.About2 h3{
+    color: #dcf0fc;
+    font-weight: lighter;
+    font-size: 22px;
+    padding: 3vh;
+}
+
+.School-Works-section{
+    display: flex;
+    background-color: #dcf0fc;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.School-Works-section div{
+    width:300px;
+    text-align:center;
+}
+
+.School-Works-section img{
+    width:100%;
+    border-radius: 10px;
+}
+
+.Personal-Works-section{
+    display: flex;
+    background-color: #dcf0fc;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    overflow: hidden;
+    margin: 5vh 0vw;
+}
+
+.Personal-Works-section div{
+    width:300px;
+    text-align:center;
+}
+
+.Personal-Works-section img{
+    width:100%;
+    border-radius: 10px;
+}
+
+footer {
+    background-color: #0a2a43;
+    color: #ffffffc9;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*進場動畫*/
+@keyframes bottomInText {
+    from {
+      transform: translateY(500px);
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .Home-section h3 {
+    animation: bottomInText 1.2s ease-out forwards;
+  }
+  
+  .Home-section h1 {
+    animation: bottomInText 1.5s ease-out forwards;
+}
+/*opacity不透明度*/
+
+@keyframes topIn {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  nav {
+    animation: topIn 1s ease-out forwards;
+}
+
+/*響應式*/
+@keyframes topOut {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width: 855px) {
+    nav {
+        animation: topOut 0.7s ease-out forwards;
+    }
+
+    .menu {
+        display: block;
+        background-color: transparent;
+        color: white;
+        font-size: 35px;
+        position: absolute;
+        top: 10px;
+        left: 20px;
+        animation: topIn 1s ease-out forwards;
+    }
+
+    #text h3 {
+        font-size: 13.7px;
+        font-weight: 400;
+        letter-spacing: 9px;
+        text-align: center;
+      }
+    #text h1 {
+        font-size: 13vw;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        text-align: center;
+        margin: -20px 0;
+      }
+}
+
+@media screen and (min-width: 856px) {
+    .menu {
+        display: block;
+        background-color: transparent;
+        color: white;
+        font-size: 35px;
+        position: absolute;
+        top: 10px;
+        left: 20px;
+        animation: topOut 0.7s ease-out forwards
+    }
+    /*min-width: 841px頁面最小841px時觸發*/
+    
+}
+
